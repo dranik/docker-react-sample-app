@@ -6,7 +6,7 @@ before_install:
   - docker build -t dranik/docker-react-sample-app -f Dockerfile.dev .
 
 script:
-  - docker run CI=true dranik/docker-react-sample-app npm run test -- --coverage
+  - docker run -e CI=true dranik/docker-react-sample-app npm run test -- --coverage
 
 deploy:
   provider: elasticbeanstalk
